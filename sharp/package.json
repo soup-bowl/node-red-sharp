@@ -1,17 +1,15 @@
 {
-  "name": "node-red-contrib-sharp",
+  "name": "@soupbowl/node-red-sharp",
   "version": "0.1.0",
-  "description": "Run conversions and resize operations on images",
+  "description": "Adds Sharp image library support to Node-RED",
   "node-red": {
     "nodes": {
       "sharp-convert": "sharp-convert.js",
       "sharp-resize": "sharp-resize.js"
     }
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "soup-bowl",
+  "author": "soup-bowl <code@soupbowl.io>",
+  "homepage": "https://github.com/soup-bowl/node-red-extras",
   "license": "MIT",
   "dependencies": {
     "sharp": "^0.33.3"
