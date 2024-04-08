@@ -130,28 +130,35 @@
             },
             {
                 "t": "set",
-                "p": "sharpWidth",
-                "pt": "msg",
-                "to": "640",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "sharpHeight",
-                "pt": "msg",
-                "to": "480",
-                "tot": "num"
-            },
-            {
-                "t": "set",
-                "p": "sharpOptions",
+                "p": "sharp",
                 "pt": "msg",
                 "to": "{}",
                 "tot": "json"
             },
             {
                 "t": "set",
-                "p": "sharpOptions.colours",
+                "p": "sharp.width",
+                "pt": "msg",
+                "to": "640",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "sharp.height",
+                "pt": "msg",
+                "to": "480",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "sharp.options",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "sharp.options.colours",
                 "pt": "msg",
                 "to": "8",
                 "tot": "num"

@@ -12,14 +12,14 @@ module.exports = function (RED) {
 
 		var node = this;
 		node.on('input', function (msg) {
-			const width = msg.sharpWidth || parseInt(config.width);
-			const height = msg.sharpHeight || parseInt(config.height);
-			const fit = msg.sharpFit || config.fit || 'centre';
-			const position = msg.sharpPosition || config.position || 'centre';
+			const width = msg.sharp?.width ?? config.width;
+			const height = msg.sharp?.height ?? config.height;
+			const fit = msg.sharp?.fit ?? config.fit ?? 'centre';
+			const position = msg.sharp?.position ?? config.position ?? 'centre';
 
 			if (Buffer.isBuffer(msg.payload)) {
 				sharp(msg.payload)
-					.resize(width, height, {
+					.resize(parseInt(width), parseInt(height), {
 						fit: fit,
 						position: position
 					})

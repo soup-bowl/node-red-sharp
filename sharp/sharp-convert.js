@@ -9,8 +9,8 @@ module.exports = function (RED) {
 
 		var node = this;
 		node.on('input', function (msg) {
-			const format = msg.sharpFormat || config.format || 'jpeg';
-			const options = msg.sharpOptions || {};
+			const format = msg.sharp?.format ?? config.format ?? 'jpeg';
+			const options = msg.sharp?.options ?? {};
 
 			if (Buffer.isBuffer(msg.payload)) {
 				sharp(msg.payload)
