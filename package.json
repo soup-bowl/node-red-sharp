@@ -9,7 +9,7 @@
     }
   },
   "author": "soup-bowl <code@soupbowl.io>",
-  "homepage": "https://github.com/soup-bowl/node-red-extras",
+  "homepage": "https://github.com/soup-bowl/node-red-sharp",
   "license": "MIT",
   "dependencies": {
     "sharp": "^0.33.3"
