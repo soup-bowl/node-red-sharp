@@ -28,7 +28,7 @@ module.exports = function(RED) {
 					node.send(msg);
 				})
 				.catch(err => {
-					node.error('Error resizing image:', err);
+					node.error('[sb-sharp] Error resizing image:', err);
 				});
 		});
 	}
