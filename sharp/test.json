@@ -47,7 +47,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 890,
+        "x": 910,
         "y": 240,
         "wires": []
     },
@@ -105,7 +105,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "4482c4c204eb1902"
@@ -129,7 +129,7 @@
         "senderr": false,
         "headers": [],
         "x": 350,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
                 "efd1ec7e516664b5"
@@ -153,21 +153,35 @@
                 "t": "set",
                 "p": "headers.content-type",
                 "pt": "msg",
-                "to": "image/jpeg",
+                "to": "image/gif",
                 "tot": "str"
             },
             {
                 "t": "set",
                 "p": "sharpWidth",
                 "pt": "msg",
-                "to": "20",
+                "to": "640",
                 "tot": "num"
             },
             {
                 "t": "set",
                 "p": "sharpHeight",
                 "pt": "msg",
-                "to": "20",
+                "to": "480",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "sharpOptions",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "sharpOptions.colours",
+                "pt": "msg",
+                "to": "8",
                 "tot": "num"
             }
         ],
@@ -177,10 +191,10 @@
         "to": "",
         "reg": false,
         "x": 540,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
-                "c7981707e4c43619"
+                "7659a372735acf1f"
             ]
         ]
     },
@@ -191,8 +205,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 890,
-        "y": 300,
+        "x": 910,
+        "y": 320,
         "wires": []
     },
     {
@@ -214,24 +228,6 @@
         ]
     },
     {
-        "id": "c7981707e4c43619",
-        "type": "sharp-resize",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "width": 0,
-        "height": 0,
-        "fit": "cover",
-        "position": "centre",
-        "gravity": "centre",
-        "x": 730,
-        "y": 300,
-        "wires": [
-            [
-                "046838f35cf89cb9"
-            ]
-        ]
-    },
-    {
         "id": "2ac796a88c11e50d",
         "type": "http in",
         "z": "f6f2187d.f17ca8",
@@ -241,7 +237,7 @@
         "upload": false,
         "swaggerDoc": "",
         "x": 150,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "1c74857d94014720"
@@ -268,7 +264,7 @@
         "to": "",
         "reg": false,
         "x": 440,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "04c538f2346ddfc7"
@@ -286,7 +282,7 @@
         "position": "centre",
         "gravity": "centre",
         "x": 730,
-        "y": 360,
+        "y": 400,
         "wires": [
             [
                 "1750af11a7f412c8"
@@ -300,8 +296,8 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 890,
-        "y": 360,
+        "x": 910,
+        "y": 400,
         "wires": []
     },
     {
@@ -317,7 +313,7 @@
         "statusVal": "",
         "statusType": "auto",
         "x": 560,
-        "y": 420,
+        "y": 460,
         "wires": []
     },
     {
@@ -332,10 +328,42 @@
         ],
         "uncaught": false,
         "x": 410,
-        "y": 420,
+        "y": 460,
         "wires": [
             [
                 "e6292a98dc683809"
+            ]
+        ]
+    },
+    {
+        "id": "7659a372735acf1f",
+        "type": "sharp-convert",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "format": "gif",
+        "x": 720,
+        "y": 300,
+        "wires": [
+            [
+                "84e93bb1e8552192"
+            ]
+        ]
+    },
+    {
+        "id": "84e93bb1e8552192",
+        "type": "sharp-resize",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "width": 0,
+        "height": 0,
+        "fit": "cover",
+        "position": "centre",
+        "gravity": "centre",
+        "x": 750,
+        "y": 340,
+        "wires": [
+            [
+                "046838f35cf89cb9"
             ]
         ]
     }

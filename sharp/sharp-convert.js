@@ -10,10 +10,11 @@ module.exports = function (RED) {
 		var node = this;
 		node.on('input', function (msg) {
 			const format = msg.sharpFormat || config.format || 'jpeg';
+			const options = msg.sharpOptions || {};
 
 			if (Buffer.isBuffer(msg.payload)) {
 				sharp(msg.payload)
-					.toFormat(format)
+					.toFormat(format, options)
 					.toBuffer()
 					.then(imageBuffer => {
 						msg.payload = imageBuffer;
