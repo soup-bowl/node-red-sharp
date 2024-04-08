@@ -4,6 +4,7 @@
   "description": "Run conversions and resize operations on images",
   "node-red": {
     "nodes": {
+      "sharp-convert": "sharp-convert.js",
       "sharp-resize": "sharp-resize.js"
     }
   },
