@@ -1,47 +1,77 @@
 <script type="text/javascript">
-    RED.nodes.registerType('sharp',{
-        category: 'function',
-        color: '#99cc00',
-        defaults: {
-            name: {value:""},
-            width: {value:0},
-            height: {value:0},
-            fit: {value:"cover"}
-        },
-        inputs: 1,
-        outputs: 1,
-        icon: "hash.svg",
-        label: function() {
-            return this.name||"sharp";
-        }
-    });
+	RED.nodes.registerType('sharp',{
+		category: 'function',
+		color: '#99cc00',
+		defaults: {
+			name: {value:""},
+			width: {value:0},
+			height: {value:0},
+			fit: {value:"cover"},
+			position: {value:"centre"},
+			gravity: {value:"centre"}
+		},
+		inputs: 1,
+		outputs: 1,
+		icon: "hash.svg",
+		label: function() {
+			return this.name||"sharp";
+		}
+	});
 </script>
 
 <script type="text/html" data-template-name="sharp">
-    <div class="form-row">
-        <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
-        <input type="text" id="node-input-name" placeholder="Name">
-    </div>
-    <div class="form-row">
-        <label for="node-input-width">Width</label>
-        <input type="number" id="node-input-width">
-    </div>
-    <div class="form-row">
-        <label for="node-input-height">Height</label>
-        <input type="number" id="node-input-height">
-    </div>
-    <div class="form-row">
-        <label for="node-input-fit">Fit</label>
-        <select id="node-input-fit">
-            <option value="cover">Cover (default)</option>
-            <option value="contain">Contain</option>
-            <option value="fill">Fill</option>
-            <option value="inside">Inside</option>
-            <option value="outside">Outside</option>
-        </select>
-    </div>
+	<div class="form-row">
+		<label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+		<input type="text" id="node-input-name" placeholder="Name">
+	</div>
+	<div class="form-row">
+		<label for="node-input-width">Width</label>
+		<input type="number" id="node-input-width">
+	</div>
+	<div class="form-row">
+		<label for="node-input-height">Height</label>
+		<input type="number" id="node-input-height">
+	</div>
+	<div class="form-row">
+		<label for="node-input-fit">Fit</label>
+		<select id="node-input-fit">
+			<option value="cover">Cover (default)</option>
+			<option value="contain">Contain</option>
+			<option value="fill">Fill</option>
+			<option value="inside">Inside</option>
+			<option value="outside">Outside</option>
+		</select>
+	</div>
+	<div class="form-row">
+		<label for="node-input-position">Position</label>
+		<select id="node-input-position">
+			<option value="centre">Centre (default)</option>
+			<option value="top">Top</option>
+			<option value="right top">Right Top</option>
+			<option value="right">Right</option>
+			<option value="right bottom">Right Bottom</option>
+			<option value="bottom">Bottom</option>
+			<option value="left bottom">Left Bottom</option>
+			<option value="left">Left</option>
+			<option value="left top">Left Top</option>
+		</select>
+	</div>
+	<!--<div class="form-row">
+		<label for="node-input-gravity">Gravity</label>
+		<select id="node-input-gravity">
+			<option value="centre">Centre (default)</option>
+			<option value="north">North</option>
+			<option value="northeast">Northeast</option>
+			<option value="east">East</option>
+			<option value="southeast">Southeast</option>
+			<option value="south">South</option>
+			<option value="southwest">Southwest</option>
+			<option value="west">West</option>
+			<option value="northwest">Northwest</option>
+		</select>
+	</div>-->
 </script>
 
 <script type="text/html" data-help-name="sharp">
-    <p>Runs an image through the Sharp library for conversion and adjustments</p>
+	<p>Runs an image through the Sharp library for conversion and adjustments</p>
 </script>
