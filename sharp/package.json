@@ -15,6 +15,7 @@
   "dependencies": {
     "sharp": "^0.33.3"
   },
+  "bundledDependencies": true,
   "engines": {
     "node": ">=18"
   }
