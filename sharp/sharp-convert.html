@@ -1,16 +1,16 @@
 <script type="text/javascript">
-	RED.nodes.registerType('sharp-convert',{
+	RED.nodes.registerType('sharp-convert', {
 		category: 'sharp',
 		color: '#99cc00',
 		defaults: {
-			name: {value:""},
-			format: {value:"jpeg"}
+			name: { value: "" },
+			format: { value: "jpeg" }
 		},
 		inputs: 1,
 		outputs: 1,
 		icon: "hash.svg",
-		label: function() {
-			return this.name||"sharp-convert";
+		label: function () {
+			return this.name || "sharp-convert";
 		}
 	});
 </script>
@@ -34,10 +34,16 @@
 			<option value="raw">RAW</option>
 		</select>
 	</div>
-	<div class="form-tips" id="node-tip">
+	<div class="form-tips" id="node-tip-1">
+		Tip: Options can be specified by passing an option for the destination format to <code>msg.sharpOpions</code>.<br>
+		You can find more information on supported options <a href="https://sharp.pixelplumbing.com/api-output#jpeg">in
+			the Sharp Documentation</a> (jpeg used as example).
+	</div>
+	<br>
+	<div class="form-tips" id="node-tip-2">
 		Tip: For Sharp arguments, the node will accept flow arguments over inputs.<br>
 		Arguments are named 'sharp' then the argument name, in camelCase.<br>
-		e.g. for width, it looks for <code>msg.sharpWidth</code>.<br>
+		e.g. for format, it looks for <code>msg.sharpFormat</code>.<br>
 		<strong>This is alpha, and may change at a later version.</strong>
 	</div>
 </script>
