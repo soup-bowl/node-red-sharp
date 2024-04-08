@@ -1,9 +1,9 @@
-module.exports = function(RED) {
+module.exports = function (RED) {
 	"use strict";
 	const sharp = require("sharp");
 
 	function SharpResizeNode(config) {
-		RED.nodes.createNode(this,config);
+		RED.nodes.createNode(this, config);
 
 		this.width = config.width;
 		this.height = config.height;
@@ -11,7 +11,7 @@ module.exports = function(RED) {
 		this.position = config.position;
 
 		var node = this;
-		node.on('input', function(msg) {
+		node.on('input', function (msg) {
 			const width = msg.sharpWidth || parseInt(config.width);
 			const height = msg.sharpHeight || parseInt(config.height);
 			const fit = msg.sharpFit || config.fit || 'centre';
@@ -32,5 +32,5 @@ module.exports = function(RED) {
 				});
 		});
 	}
-	RED.nodes.registerType("sharp-resize",SharpResizeNode);
+	RED.nodes.registerType("sharp-resize", SharpResizeNode);
 }
