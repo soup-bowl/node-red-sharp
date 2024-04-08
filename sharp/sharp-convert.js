@@ -15,8 +15,8 @@ module.exports = function (RED) {
 				sharp(msg.payload)
 					.toFormat(format)
 					.toBuffer()
-					.then(resizedImageBuffer => {
-						msg.payload = resizedImageBuffer;
+					.then(imageBuffer => {
+						msg.payload = imageBuffer;
 						node.send(msg);
 					})
 					.catch(err => {

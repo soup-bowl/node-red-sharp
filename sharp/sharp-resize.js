@@ -24,8 +24,8 @@ module.exports = function (RED) {
 						position: position
 					})
 					.toBuffer()
-					.then(resizedImageBuffer => {
-						msg.payload = resizedImageBuffer;
+					.then(imageBuffer => {
+						msg.payload = imageBuffer;
 						node.send(msg);
 					})
 					.catch(err => {
