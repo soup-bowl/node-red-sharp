@@ -12,10 +12,10 @@ module.exports = function(RED) {
 
 		var node = this;
 		node.on('input', function(msg) {
-			const width = parseInt(config.width);
-			const height = parseInt(config.height);
-			const fit = config.fit;
-			const position = config.position;
+			const width = msg.sharpWidth || parseInt(config.width);
+			const height = msg.sharpHeight || parseInt(config.height);
+			const fit = msg.sharpFit || config.fit || 'centre';
+			const position = msg.sharpPosition || config.position || 'centre';
 
 			sharp(msg.payload)
 				.resize(width, height, {

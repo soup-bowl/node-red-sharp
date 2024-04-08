@@ -16,7 +16,7 @@
         "senderr": false,
         "headers": [],
         "x": 350,
-        "y": 380,
+        "y": 240,
         "wires": [
             [
                 "5189c673ba39417e"
@@ -32,8 +32,8 @@
         "method": "get",
         "upload": false,
         "swaggerDoc": "",
-        "x": 160,
-        "y": 380,
+        "x": 140,
+        "y": 240,
         "wires": [
             [
                 "93cd30c4e95b07b9"
@@ -48,7 +48,7 @@
         "statusCode": "",
         "headers": {},
         "x": 850,
-        "y": 380,
+        "y": 240,
         "wires": []
     },
     {
@@ -78,7 +78,7 @@
         "to": "",
         "reg": false,
         "x": 540,
-        "y": 380,
+        "y": 240,
         "wires": [
             [
                 "ea13ba8d9a07fee4"
@@ -91,8 +91,8 @@
         "z": "f6f2187d.f17ca8",
         "name": "Tests the Sharp library integration",
         "info": "",
-        "x": 210,
-        "y": 340,
+        "x": 190,
+        "y": 200,
         "wires": []
     },
     {
@@ -100,12 +100,135 @@
         "type": "sharp",
         "z": "f6f2187d.f17ca8",
         "name": "",
+        "width": "80",
+        "height": "60",
+        "fit": "cover",
+        "position": "right top",
+        "gravity": "centre",
         "x": 710,
-        "y": 380,
+        "y": 240,
         "wires": [
             [
                 "0fba6de2e5087f2c"
             ]
         ]
+    },
+    {
+        "id": "cb350e753296379c",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "url": "/test-sharp-2",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 300,
+        "wires": [
+            [
+                "4482c4c204eb1902"
+            ]
+        ]
+    },
+    {
+        "id": "4482c4c204eb1902",
+        "type": "http request",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "https://source.unsplash.com/random",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 350,
+        "y": 300,
+        "wires": [
+            [
+                "efd1ec7e516664b5"
+            ]
+        ]
+    },
+    {
+        "id": "efd1ec7e516664b5",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "headers",
+                "pt": "msg",
+                "to": "{}",
+                "tot": "json"
+            },
+            {
+                "t": "set",
+                "p": "headers.content-type",
+                "pt": "msg",
+                "to": "image/jpeg",
+                "tot": "str"
+            },
+            {
+                "t": "set",
+                "p": "sharpWidth",
+                "pt": "msg",
+                "to": "20",
+                "tot": "num"
+            },
+            {
+                "t": "set",
+                "p": "sharpHeight",
+                "pt": "msg",
+                "to": "20",
+                "tot": "num"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 540,
+        "y": 300,
+        "wires": [
+            [
+                "81750e082949a227"
+            ]
+        ]
+    },
+    {
+        "id": "81750e082949a227",
+        "type": "sharp",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "width": "",
+        "height": 0,
+        "fit": "cover",
+        "position": "centre",
+        "gravity": "centre",
+        "x": 710,
+        "y": 300,
+        "wires": [
+            [
+                "046838f35cf89cb9"
+            ]
+        ]
+    },
+    {
+        "id": "046838f35cf89cb9",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 850,
+        "y": 300,
+        "wires": []
     }
 ]
