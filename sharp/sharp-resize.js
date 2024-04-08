@@ -17,19 +17,23 @@ module.exports = function (RED) {
 			const fit = msg.sharpFit || config.fit || 'centre';
 			const position = msg.sharpPosition || config.position || 'centre';
 
-			sharp(msg.payload)
-				.resize(width, height, {
-					fit: fit,
-					position: position
-				})
-				.toBuffer()
-				.then(resizedImageBuffer => {
-					msg.payload = resizedImageBuffer;
-					node.send(msg);
-				})
-				.catch(err => {
-					node.error('[sb-sharp] Error resizing image:', err);
-				});
+			if (Buffer.isBuffer(msg.payload)) {
+				sharp(msg.payload)
+					.resize(width, height, {
+						fit: fit,
+						position: position
+					})
+					.toBuffer()
+					.then(resizedImageBuffer => {
+						msg.payload = resizedImageBuffer;
+						node.send(msg);
+					})
+					.catch(err => {
+						node.error('[sb-sharp] Error resizing image:', err);
+					});
+			} else {
+				node.error('[sb-sharp] The payload was not an image buffer.');
+			}
 		});
 	}
 	RED.nodes.registerType("sharp-resize", SharpResizeNode);

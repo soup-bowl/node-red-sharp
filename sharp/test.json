@@ -230,5 +230,113 @@
                 "046838f35cf89cb9"
             ]
         ]
+    },
+    {
+        "id": "2ac796a88c11e50d",
+        "type": "http in",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "url": "/test-sharp-not",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 150,
+        "y": 360,
+        "wires": [
+            [
+                "1c74857d94014720"
+            ]
+        ]
+    },
+    {
+        "id": "1c74857d94014720",
+        "type": "change",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "This is not a picture",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 440,
+        "y": 360,
+        "wires": [
+            [
+                "04c538f2346ddfc7"
+            ]
+        ]
+    },
+    {
+        "id": "04c538f2346ddfc7",
+        "type": "sharp-resize",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "width": 0,
+        "height": 0,
+        "fit": "cover",
+        "position": "centre",
+        "gravity": "centre",
+        "x": 730,
+        "y": 360,
+        "wires": [
+            [
+                "1750af11a7f412c8"
+            ]
+        ]
+    },
+    {
+        "id": "1750af11a7f412c8",
+        "type": "http response",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 890,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "e6292a98dc683809",
+        "type": "debug",
+        "z": "f6f2187d.f17ca8",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 560,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "6fa92b3ea4ab9eec",
+        "type": "catch",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "scope": [
+            "66c9ffdde6e2243a",
+            "c7981707e4c43619",
+            "04c538f2346ddfc7"
+        ],
+        "uncaught": false,
+        "x": 410,
+        "y": 420,
+        "wires": [
+            [
+                "e6292a98dc683809"
+            ]
+        ]
     }
 ]
