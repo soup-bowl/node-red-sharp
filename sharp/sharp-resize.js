@@ -2,7 +2,7 @@ module.exports = function(RED) {
 	"use strict";
 	const sharp = require("sharp");
 
-	function SharpConversionNode(config) {
+	function SharpResizeNode(config) {
 		RED.nodes.createNode(this,config);
 
 		this.width = config.width;
@@ -32,5 +32,5 @@ module.exports = function(RED) {
 				});
 		});
 	}
-	RED.nodes.registerType("sharp",SharpConversionNode);
+	RED.nodes.registerType("sharp-resize",SharpResizeNode);
 }

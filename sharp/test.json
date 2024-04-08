@@ -47,7 +47,7 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 850,
+        "x": 890,
         "y": 240,
         "wires": []
     },
@@ -81,7 +81,7 @@
         "y": 240,
         "wires": [
             [
-                "ea13ba8d9a07fee4"
+                "66c9ffdde6e2243a"
             ]
         ]
     },
@@ -94,24 +94,6 @@
         "x": 190,
         "y": 200,
         "wires": []
-    },
-    {
-        "id": "ea13ba8d9a07fee4",
-        "type": "sharp",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "width": "80",
-        "height": "60",
-        "fit": "cover",
-        "position": "right top",
-        "gravity": "centre",
-        "x": 710,
-        "y": 240,
-        "wires": [
-            [
-                "0fba6de2e5087f2c"
-            ]
-        ]
     },
     {
         "id": "cb350e753296379c",
@@ -198,25 +180,7 @@
         "y": 300,
         "wires": [
             [
-                "81750e082949a227"
-            ]
-        ]
-    },
-    {
-        "id": "81750e082949a227",
-        "type": "sharp",
-        "z": "f6f2187d.f17ca8",
-        "name": "",
-        "width": "",
-        "height": 0,
-        "fit": "cover",
-        "position": "centre",
-        "gravity": "centre",
-        "x": 710,
-        "y": 300,
-        "wires": [
-            [
-                "046838f35cf89cb9"
+                "c7981707e4c43619"
             ]
         ]
     },
@@ -227,8 +191,44 @@
         "name": "",
         "statusCode": "",
         "headers": {},
-        "x": 850,
+        "x": 890,
         "y": 300,
         "wires": []
+    },
+    {
+        "id": "66c9ffdde6e2243a",
+        "type": "sharp-resize",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "width": "600",
+        "height": "300",
+        "fit": "contain",
+        "position": "right top",
+        "gravity": "centre",
+        "x": 730,
+        "y": 240,
+        "wires": [
+            [
+                "0fba6de2e5087f2c"
+            ]
+        ]
+    },
+    {
+        "id": "c7981707e4c43619",
+        "type": "sharp-resize",
+        "z": "f6f2187d.f17ca8",
+        "name": "",
+        "width": 0,
+        "height": 0,
+        "fit": "cover",
+        "position": "centre",
+        "gravity": "centre",
+        "x": 730,
+        "y": 300,
+        "wires": [
+            [
+                "046838f35cf89cb9"
+            ]
+        ]
     }
 ]
