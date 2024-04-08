@@ -1,4 +1,27 @@
-# node-red-extras
-My extra functions for use in Node-Red. Each folder will have a relevant readme.
+# Sharp in Node-RED
 
-To manually install any of these before I'm ready (at your risk), run `npm ci && npm pack`.
+A gradual attempt to add [Sharp][#] functionality into Node-RED.
+
+## Nodes
+
+Node arguments can be specified by the flow, or input directly to the node.
+
+### `sharp-convert`
+
+Input a `msg.payload` of an image buffer object, and you can convert an image.
+
+supported configuration:
+
+* Format
+* Options (as `msg.sharpOptions`, supporting the `options` [from the docs](https://sharp.pixelplumbing.com/api-output#jpeg))
+
+### `sharp-resize`
+
+Input a `msg.payload` of an image buffer object, and it will attempt to resize the image.
+
+Supported configuration:
+
+* Dimensions (width & height)
+* Fill type (fit & position)
+
+[#]: https://sharp.pixelplumbing.com/

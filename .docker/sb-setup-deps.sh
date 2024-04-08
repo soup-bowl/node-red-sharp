@@ -1,3 +1,2 @@
 #! /bin/bash
-
-npm i /modules/sharp
+npm i /modules
