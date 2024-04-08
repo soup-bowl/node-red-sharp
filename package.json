@@ -17,5 +17,6 @@
   "bundledDependencies": true,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "keywords": ["node-red"]
 }
