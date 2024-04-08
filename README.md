@@ -2,6 +2,8 @@
 
 A gradual attempt to add [Sharp][#] functionality into Node-RED.
 
+⚠️ **This is very early stages and should be considered pre-alpha - do not use in production systems and expect changes to procedures.**
+
 ## Nodes
 
 Node arguments can be specified by the flow, or input directly to the node.
