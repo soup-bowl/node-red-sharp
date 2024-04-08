@@ -1,0 +1,13 @@
+services:
+  nodered:
+    container_name: nodered
+    build:
+      context: .docker
+    volumes:
+    - "nrdata:/data"
+    - ".:/modules"
+    ports:
+    - 1880:1880
+
+volumes:
+  nrdata:

@@ -1,0 +1,12 @@
+tasks:
+  - init: |
+      docker compose pull
+    command: |
+      docker compose up -d
+      docker compose exec nodered /usr/local/bin/sb-setup-deps
+      docker compose restart nodered
+      docker compose logs -f nodered
+
+ports:
+  - port: 1880
+    name: NodeRed
