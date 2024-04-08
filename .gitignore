@@ -1,3 +1,4 @@
 node_modules/
 .nrdata/
 .DS_Store
+soupbowl-node-red-sharp*.tgz
