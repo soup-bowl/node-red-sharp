@@ -1,8 +1,9 @@
 {
   "name": "@soupbowl/node-red-sharp",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Adds Sharp image library support to Node-RED",
   "node-red": {
+    "version": ">=3.1.0",
     "nodes": {
       "sharp-convert": "sharp-convert.js",
       "sharp-resize": "sharp-resize.js"
@@ -10,13 +11,14 @@
   },
   "author": "soup-bowl <code@soupbowl.io>",
   "homepage": "https://github.com/soup-bowl/node-red-sharp",
+  "bugs": "https://github.com/soup-bowl/node-red-sharp/issues",
   "license": "MIT",
   "dependencies": {
     "sharp": "^0.33.3"
   },
   "bundledDependencies": true,
   "engines": {
-    "node": ">=18"
+    "node": ">=18.0.0"
   },
   "keywords": ["node-red"]
 }
