@@ -1,3 +1,5 @@
 .docker/
+.github/
+.vscode/
 .gitpod.yml
 docker-compose.yml
