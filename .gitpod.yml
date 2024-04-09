@@ -1,6 +1,7 @@
 tasks:
   - init: |
       docker compose pull
+      npm ci
     command: |
       docker compose up -d
       docker compose exec nodered /usr/local/bin/sb-setup-deps
