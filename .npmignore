@@ -1,4 +1,3 @@
 .docker/
 .gitpod.yml
 docker-compose.yml
-test.json
