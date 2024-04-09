@@ -15,7 +15,7 @@ Input a `msg.payload` of an image buffer object, and you can convert an image.
 supported configuration:
 
 * Format
-* Options (as `msg.sharpOptions`, supporting the `options` [from the docs](https://sharp.pixelplumbing.com/api-output#jpeg))
+* Options (as `msg.sharp.options`, supporting the `options` [from the docs](https://sharp.pixelplumbing.com/api-output#jpeg))
 
 ### `sharp-resize`
 
